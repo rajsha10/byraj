@@ -1,6 +1,8 @@
+// testing/components/ui/link-preview.tsx
+
 "use client";
 import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
-
+import Image from "next/image"; // Fixed: Imported Image
 import { encode } from "qss";
 import React from "react";
 import {
@@ -31,8 +33,7 @@ export const LinkPreview = ({
   className,
   width = 200,
   height = 125,
-  quality = 50,
-  layout = "fixed",
+  // Fixed: Removed unused props from destructuring
   isStatic = false,
   imageSrc = "",
 }: LinkPreviewProps) => {
@@ -67,8 +68,9 @@ export const LinkPreview = ({
 
   const translateX = useSpring(x, springConfig);
 
-  const handleMouseMove = (event: any) => {
-    const targetRect = event.target.getBoundingClientRect();
+  // Fixed: Replaced 'any' with specific React MouseEvent type
+  const handleMouseMove = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    const targetRect = event.currentTarget.getBoundingClientRect();
     const eventOffsetX = event.clientX - targetRect.left;
     const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2; // Reduce the effect to make it subtle
     x.set(offsetFromCenter);
@@ -78,11 +80,13 @@ export const LinkPreview = ({
     <>
       {isMounted ? (
         <div className="hidden">
-          <img
+          {/* Fixed: Replaced img with Image component */}
+          <Image
             src={src}
             width={width}
             height={height}
             alt="hidden image"
+            unoptimized={true} 
           />
         </div>
       ) : null}
@@ -134,12 +138,14 @@ export const LinkPreview = ({
                   style={{ fontSize: 0 }}
                   target="_blank"
                 >
-                  <img
+                  {/* Fixed: Replaced img with Image component */}
+                  <Image
                     src={isStatic ? imageSrc : src}
                     width={width}
                     height={height}
                     className="rounded-lg"
                     alt="preview image"
+                    unoptimized={true}
                   />
                 </a>
               </motion.div>

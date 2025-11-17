@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, DM_Sans } from "next/font/google"
 import { FloatingTopNav } from "@/components/floating-nav"
 import { PageTransition } from "@/components/page-transition"
-import { ThemeProvider } from "@/components/theme-provider" // Import this
+import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css";
 import Footer from "@/components/Footer";
 
@@ -19,7 +19,8 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "by-raj",
+  title: "raj-codes",
+  
 };
 
 export default function RootLayout({

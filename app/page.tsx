@@ -7,8 +7,7 @@ import { AnimatedSection } from "@/components/animated-section"
 import Hero from "@/components/Hero"
 import About from "@/components/About"
 import GlowLight from "@/components/GlowLight"
-import { LampDemo } from "@/components/ui/lamp"
-import Footer from "@/components/Footer"
+import Link from "next/link";
 
 export default function HomePage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -23,7 +22,7 @@ export default function HomePage() {
   }, [])
 
   return (
-    <div className="min-h-screen text-foreground relative overflow-hidden w-[65%] mx-auto">
+    <div className="min-h-screen text-foreground relative overflow-hidden w-full px-4 md:w-[90%] lg:w-[65%] mx-auto">
       {/* Decorative background pattern */}
       <div className="fixed inset-0 opacity-5 pointer-events-none">
         <div className="absolute top-1/4 right-1/4 w-64 h-64 opacity-30">
@@ -78,36 +77,37 @@ export default function HomePage() {
 
             {/* CTA buttons using theme colors */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-              <Button
-                size="lg"
-                className="group relative overflow-hidden bg-primary hover:bg-primary/90 
-                text-primary-foreground px-8 py-3 rounded-lg transition-all duration-300 
-                hover:shadow-lg hover:shadow-primary/25 border-2 border-primary/50 hover:border-primary"
-              >
-                <span className="relative z-10 flex items-center">
-                  Start a Project
-                  <Mail className="ml-2 h-4 w-4 transition-transform group-hover:scale-110" />
-                </span>
-              </Button>
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  className="group relative overflow-hidden bg-primary hover:bg-primary/90 
+                  text-primary-foreground px-8 py-3 rounded-lg transition-all duration-300 
+                  hover:shadow-lg hover:shadow-primary/25 border-2 border-primary/50 hover:border-primary"
+                  >
+                  <span className="relative z-10 flex items-center">
+                    Start a Project
+                    <Mail className="ml-2 h-4 w-4 transition-transform group-hover:scale-110" />
+                  </span>
+                </Button>
+              </Link>
 
-              <Button
-                size="lg"
-                className="group relative overflow-hidden bg-secondary hover:bg-secondary/80 
-                text-secondary-foreground px-8 py-3 rounded-lg transition-all duration-300 
-                hover:shadow-lg hover:shadow-secondary/25 border-2 border-secondary/50 hover:border-secondary"
-              >
-                <span className="flex items-center">
-                  Get In Touch
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </span>
-              </Button>
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  className="group relative overflow-hidden bg-secondary hover:bg-secondary/80 
+                  text-secondary-foreground px-8 py-3 rounded-lg transition-all duration-300 
+                  hover:shadow-lg hover:shadow-secondary/25 border-2 border-secondary/50 hover:border-secondary"
+                  >
+                  <span className="flex items-center">
+                    Get In Touch
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
       </AnimatedSection>
-
-      {/* Footer */}
-      <Footer />
     </div>
   )
 }

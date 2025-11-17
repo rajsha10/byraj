@@ -9,8 +9,8 @@ export default function Projects(){
     return(
 
         <AnimatedSection animation="slide-left">
-        <section id="projects" className="py-20 px-6">
-          <div className="max-w-[60%] mx-auto">
+        <section id="projects" className="py-20 px-4 md:px-6">
+          <div className="w-full md:max-w-[80%] lg:max-w-[60%] mx-auto">
             <div className="text-center space-y-4 mb-16">
               <h2 className="text-3xl md:text-4xl font-heading font-bold">Featured Projects</h2>
               <p className="text-lg text-muted-foreground">Some of my recent work</p>

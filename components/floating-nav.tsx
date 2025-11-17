@@ -11,7 +11,7 @@ import { useTheme } from "next-themes"
 const navItems = [
   { href: "/projects", label: "Projects" },
   { href: "/experience", label: "Experience" },
-  { href: "/blogs", label: "Blogs" },
+  // { href: "/blogs", label: "Blogs" },
   { href: "/contact", label: "Contact" },
 ]
 

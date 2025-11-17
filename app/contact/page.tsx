@@ -9,8 +9,9 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
+import { toast } from "sonner"
+import { sendContactEmail } from "@/actions";
 import {
-  ArrowLeft,
   Send,
   Mail,
   Phone,
@@ -23,7 +24,6 @@ import {
   MessageSquare,
   Coffee,
 } from "lucide-react"
-import Link from "next/link"
 
 const contactMethods = [
   {
@@ -101,28 +101,37 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    try {
+      const result = await sendContactEmail(formData)
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-
-    // Reset form after success animation
-    setTimeout(() => {
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-        projectType: "",
-        budget: "",
-      })
-      setIsSubmitted(false)
-    }, 3000)
+      if (result.success) {
+        setIsSubmitted(true)
+        toast.success("Message sent successfully!")
+        
+        setTimeout(() => {
+          setFormData({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+            projectType: "",
+            budget: "",
+          })
+          setIsSubmitted(false)
+        }, 3000)
+      } else {
+        toast.error(result.error || "Something went wrong. Please try again.")
+      }
+    } catch (error) {
+      toast.error("Failed to send message. Please check your connection.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    // CRITICAL: Ensure NO 'overflow-hidden' or 'overflow-x-hidden' is here
+    <div className="min-h-screen bg-background text-foreground w-full px-4 md:w-[90%] lg:w-[85%] mx-auto">
 
       <div className="pt-24 pb-20">
         {/* Hero Section */}
@@ -138,7 +147,6 @@ export default function ContactPage() {
               </p>
             </div>
 
-            {/* Mandala Divider */}
             <div className="flex items-center justify-center py-8">
               <div className="w-16 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent"></div>
               <div className="mx-4 text-accent/70">✦</div>
@@ -150,7 +158,7 @@ export default function ContactPage() {
         {/* Main Content */}
         <section className="px-6">
           <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-3 gap-12">
+            <div className="grid lg:grid-cols-3 gap-12 relative">
               {/* Contact Form */}
               <div className="lg:col-span-2">
                 <Card className="p-8">
@@ -313,8 +321,9 @@ export default function ContactPage() {
                 </Card>
               </div>
 
-              {/* Contact Information Sidebar */}
-              <div className="space-y-8">
+              {/* Sticky Sidebar */}
+              {/* FIX: Use 'self-start' to prevent grid stretching, enabling stickiness */}
+              <div className="space-y-8 lg:col-span-1 lg:sticky lg:top-24 lg:self-start">
                 {/* Contact Methods */}
                 <Card className="p-6">
                   <CardHeader className="px-0 pt-0">

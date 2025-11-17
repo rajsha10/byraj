@@ -4,6 +4,7 @@ import { FloatingTopNav } from "@/components/floating-nav"
 import { PageTransition } from "@/components/page-transition"
 import { ThemeProvider } from "@/components/theme-provider" // Import this
 import "./globals.css";
+import Footer from "@/components/Footer";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function RootLayout({
           <PageTransition>
             <FloatingTopNav />
             {children}
+            <Footer />
           </PageTransition>
         </ThemeProvider>
       </body>

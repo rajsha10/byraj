@@ -1,0 +1,97 @@
+[
+  {
+    "id": 1,
+    "type": "Education | Work",
+    "logoUrl": "/experience/xpmc.png",
+    "brandName": "XPMC - EMploybility.Life",
+    "role": "Cloud Security Trainee",
+    "timeline": "Sept 2024 - Nov 2024",
+    "certificateUrl": "https://drive.google.com/file/d/17cLZacFhYqNEItbMqFzdUMrVS1o425JZ/view?usp=sharing",
+    "techsUsed": ["AWS S3", "AWS IAM", "Cloud Security", "Encryption", "Access Control"],
+    "workDone": [
+      "Implemented robust AWS S3 security protocols, utilizing access controls, server-side encryption, and versioning to protect sensitive cloud data.",
+      "Architected and configured IAM environments, establishing users, roles, and strictly enforcing least-privilege policies to manage secure access.",
+      "Authored comprehensive, step-by-step technical documentation detailing security configurations and implementation procedures.",
+      "Successfully completed all project modules to earn the XPMC (XPro) Cybersecurity certification."
+    ],
+    "learnings": "Gained practical expertise in cloud security posture management, specifically mastering data protection strategies on S3 and identity management via AWS IAM.",
+    "location": "Remote",
+    "workType": "Project"
+  },
+  {
+    "id": 2,
+    "type": "Project | Hackathon",
+    "logoUrl": "/experience/kyooro.png",
+    "brandName": "Kyooro Learning Dapp",
+    "role": "Full Stack Developer",
+    "timeline": "2024",
+    "certificateUrl": "",
+    "techsUsed": ["Next.js", "Edu Chain", "AI Agents", "Solidity", "WebRTC", "Langchain"],
+    "workDone": [
+      "Secured victory at the Edu Chain Semester 3 Hackathon, winning a $1,000 prize for innovation in decentralized education.",
+      "Developed 'Kyooro,' a decentralized application (dApp) featuring an AI agent creation platform that generates personalized virtual mentors.",
+      "Engineered immersive virtual classroom environments allowing real-time interaction between students and AI mentors.",
+      "Integrated blockchain technology to securely manage credentials and learning milestones on the Edu Chain network."
+    ],
+    "learnings": "Mastered the convergence of Generative AI and Blockchain to create ed-tech solutions, focusing on agentic workflows and real-time data handling.",
+    "location": "Remote",
+    "workType": "Hackathon Winner"
+  },
+  {
+    "id": 3,
+    "type": "Remote",
+    "logoUrl": "/experience/renu.jpg",
+    "brandName": "Renu Sharma Foundation",
+    "role": "Full Stack MERN Intern",
+    "timeline": "July 2025 - Aug 2025",
+    "certificateUrl": "https://i.ibb.co/qMTFmTbL/Raj-Sharma.png",
+    "techsUsed": ["Next.js", "Node.js", "MongoDB", "Tailwind CSS", "TypeScript", "Vercel", "Cloudinary"],
+    "workDone": [
+      "Designed and implemented interactive dashboard features utilizing Next.js, TypeScript, and Tailwind CSS for a responsive UI.",
+      "Collaborated closely with the frontend team to integrate backend APIs and ensure seamless data flow.",
+      "Managed production deployments on Vercel and implemented Cloudinary for optimized image and media storage.",
+      "Received formal appreciation from the leadership team for high-quality code contributions and effective teamwork."
+    ],
+    "learnings": "Enhanced proficiency in the MERN stack with TypeScript integration and gained hands-on experience with modern deployment pipelines like Vercel.",
+    "location": "India",
+    "workType": "Internship"
+  },
+  {
+    "id": 4,
+    "type": "Project | Grant",
+    "logoUrl": "https://placehold.co/100x100/1e1e2e/ff8042?text=SC",
+    "brandName": "Switch Social",
+    "role": "Co - Founder & Full Stack Developer",
+    "timeline": "2025",
+    "certificateUrl": "",
+    "techsUsed": ["React Native", "Rust", "JavaScript", "Prisma", "Figma", "Solana", "CoinEx Int"],
+    "workDone": [
+      "Developed 'Switch Social', a decentralized application on the Solana blockchain, winning a grant of $3,000 sponsored by CoinEx.",
+      "Architected and deployed high-performance smart contracts using Rust to ensure secure and scalable on-chain interactions.",
+      "Designed a user-friendly mobile interface with Figma and implemented it using React Native for a seamless cross-platform experience.",
+      "Integrated CoinEx services to facilitate efficient asset management and exchange features within the platform."
+    ],
+    "learnings": "Deepened expertise in the Solana ecosystem and Rust programming, specifically in building grant-winning dApps and integrating CEX functionalities.",
+    "location": "Remote",
+    "workType": "Hackathon Project"
+  },
+  {
+    "id": 5,
+    "type": "Remote",
+    "logoUrl": "/experience/smaran.jpg",
+    "brandName": "SmaranAI.in",
+    "role": "Junior Full Stack Developer Intern",
+    "timeline": "Nov 2025 - Present",
+    "certificateUrl": "",
+    "techsUsed": ["React", "SQL", "OpenAI API", "Gemini API", "AI Integration"],
+    "workDone": [
+      "Developing responsive frontend user interfaces using React, focusing on seamless user experience.",
+      "Architecting and managing SQL database integrations to ensure efficient data storage and retrieval.",
+      "Implementing AI-driven features by integrating external APIs such as OpenAI and Gemini into the application.",
+      "Collaborating in a fully remote environment to deliver scalable full-stack solutions."
+    ],
+    "learnings": "Currently deepening expertise in integrating Large Language Models (LLMs) with traditional web architectures and refining remote collaboration workflows.",
+    "location": "Remote",
+    "workType": "Remote Internship"
+  }
+]

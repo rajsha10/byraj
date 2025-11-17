@@ -1,0 +1,161 @@
+[
+  {
+    "id": "1",
+    "slug": "calm-sphere",
+    "isActive": true,
+    "status": "Live",
+    "title": "CalmSphere",
+    "shortDescription": "AI-powered mental wellness platform offering personalized journaling, mood tracking, songs recommendation and community support",
+    "thumbnail": "/projects/calmsphere.png",
+    "bannerImage": "/projects/calmsphere.png",
+    "links": {
+      "liveDemo": "https://calm-sphere.vercel.app",
+      "github": "https://github.com/rajsha10/calmsphere"
+    },
+    "meta": {
+      "timeline": "Dec 2024 - Jan 2025",
+      "role": "Full Stack Developer",
+      "teamSize": "Solo Project"
+    },
+    "techStack": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "MongoDB",
+      "gemma-2b model",
+      "Framer Motion",
+      "google auth",
+      "flash 2.0"
+    ],
+    "productInfo": {
+      "motive": "I wanted to create a gentle, all-in-one digital sanctuary for mental wellness and spiritual growth. Recognizing the need for a safe, private space, I built Calm Sphere to consolidate mindful journaling, empathetic AI companionship, and mood tracking into a single, healing ecosystem.",
+      "overview": "Calm Sphere is an AI-powered mental wellness application designed to provide emotional support. It features 'Calm Bot,' a compassionate AI companion for non-judgmental chat, and a smart journaling system where AI analyzes entries to generate supportive feedback and mood scores. The platform also includes AI-curated music therapy playlists based on the user's emotional state and a comprehensive dashboard for tracking mental well-being trends.",
+      "userFlow": "User signs up -> Accesses Dashboard with daily quotes -> Writes in Journal or Chats with Calm Bot -> AI analyzes content for sentiment and emotion -> System updates Mood Score and generates personalized Song Recommendations -> User reviews wellness insights and tracks progress.",
+      "futurePlans": [
+        "Public launch and performance optimizations for faster reloads.",
+        "Make the chatbot universally available to all users.",
+        "Evolve the AI into a 'talkative' companion with voice interaction and video creation capabilities for journaling.",
+        "Launch a dedicated mobile application.",
+        "Implement a 'Sharing Ideas Panel' to allow users to connect with others who have similar thoughts and ideas, similar to Reddit."
+      ]
+    },
+    "learnings": [
+      "Learned how to work with data APIs effectively.",
+      "Integrated multiple AI/LLM models into the application workflow.",
+      "Implemented real-time YouTube data extraction.",
+      "Built context-saving mechanisms for conversational chat applications.",
+      "Explored and implemented animations using Framer Motion."
+    ],
+    "challenges": [
+      "Fetching reliable and real-time YouTube data was challenging due to API limits and data consistency issues.",
+      "Identifying and selecting the most appropriate AI/LLM models for each feature and dashboard section required extensive experimentation and evaluation."
+    ]
+  },
+  {
+    "id": "2",
+    "slug": "Kyooro",
+    "isActive": false,
+    "status": "Ongoing",
+    "title": "Kyooro",
+    "shortDescription": "Ethereum-based AI tutoring platform using RAG for personalized learning, featuring MetaMask/Web3Auth login, crypto payments, and on-chain agent access keys.",
+    "thumbnail": "/projects/kyooro.png",
+    "bannerImage": "/projects/kyooro.png",
+    "links": {
+      "liveDemo": "",
+      "github": "https://github.com/rajsha10/kyooro"
+    },
+    "meta": {
+      "timeline": "Sept 2025 - Present",
+      "role": "Full Stack Developer, Blockchain Developer",
+      "teamSize": "Solo"
+    },
+    "techStack": [
+      "Node.js",
+      "TypeScript",
+      "Metamask",
+      "Solidity",
+      "Supabase",
+      "PineCone",
+      "Docker",
+      "Tailwind CSS",
+      "WEb3Auth",
+      "Framer Motion",
+      "Lang chain RAG",
+      "Razorpay"
+    ],
+    "productInfo": {
+      "motive": "With the rise of AI in education, there was a critical need for a system that restricts AI responses strictly to teacher-provided materials to prevent hallucinations, while simultaneously using blockchain technology to secure payments and manage access rights for content creators.",
+      "overview": "Kyooro is a decentralized AI tutoring platform that utilizes Retrieval-Augmented Generation (RAG) to create subject-specific AI agents[cite: 26, 36]. [cite_start]It integrates Ethereum-based smart contracts to manage course enrollments and 'Agent Keys,' ensuring that only verified students who have paid via crypto can access the proprietary training data uploaded by teachers",
+      "userFlow": "User authenticates via Web3Auth or MetaMask SDK [cite: 9, 23] [cite_start]-> Teacher uploads PDF notes which are vectorized and stored in ChromaDB [cite: 40, 46] [cite_start]-> Student purchases course access on the Ethereum blockchain -> Smart Contract records the 'Agent Key' -> Student queries the AI, which validates on-chain access before retrieving context-specific answers",
+      "futurePlans": [
+        "Implement Live Virtual Classrooms using video-conferencing APIs (like Agora)",
+        "Develop AI-powered student insight dashboards to track performance and attendance",
+        "Add automated homework grading and submission systems"
+      ]
+    },
+    "learnings": [
+      "Implementing a Retrieval-Augmented Generation (RAG) pipeline to restrict AI responses to specific teacher-uploaded datasets",
+      "Integrating decentralized authentication using MetaMask SDK and Web3Auth to bridge traditional Web2 login flows with Web3 wallet generation.",
+      "Architecting a hybrid system that verifies on-chain 'Agent Keys' (Ethereum) before granting access to off-chain vector databases (PineCone)"
+    ],
+    "challenges": [
+      "Designing a 'Key creation engine' that securely maps student blockchain transactions to specific classroom content permissions in the vector database",
+      "Managing the latency between Ethereum block confirmations and the immediate availability of the AI agent for the student.",
+      "Ensuring the AI agent strictly cites sources from uploaded PDFs while preventing hallucinations from external data"
+    ]
+  },
+  {
+    "id": "3",
+    "slug": "cronotag",
+    "isActive": true,
+    "status": "Deployed",
+    "title": "Crono Tag",
+    "shortDescription": "A decentralized intellectual property (IP) timestamping and licensing platform, built for researchers, creators, and innovators to prove ownership and originality using blockchain technology. It provides eternal proof, verifiable, and attributed records.",
+    "thumbnail": "/public/icon.png",
+    "bannerImage": "/public/Digital-Art-3D.gif",
+    "links": {
+      "liveDemo": "https://cronotag.vercel.app",
+      "github": "https://github.com/rajsha10/cronotag"
+    },
+    "meta": {
+      "timeline": "2024 (For EDUCHAIN Semester 3)",
+      "role": "Full Stack Developer, Blockchain Developer",
+      "teamSize": "Solo"
+    },
+    "techStack": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Solidity",
+      "Hardhat",
+      "Ethers.js",
+      "MetaMask SDK",
+      "IPFS / Pinata"
+    ],
+    "productInfo": {
+      "motive": "To provide undeniable, timestamped proof of intellectual property ownership for researchers and creators using blockchain technology, solving the problem of proving originality and preventing research theft.",
+      "overview": "Crono Tag is a decentralized application (DApp) that secures research work on the Ethereum blockchain (Sepolia testnet). It generates a unique CronoTag ID and permanently stores the digital asset on IPFS via the Pinata service. It also allows for metadata search and restricted document access for an ETH fee.",
+      "userFlow": "User connects wallet (MetaMask) -> User fills out a multi-step form (Research Details: Title, Authors, Description, etc.) -> User uploads file -> File is uploaded to IPFS (Pinata) -> Transaction is submitted to the ChronoTag smart contract on the blockchain -> A unique Crono Tag is generated and displayed for future verification.",
+      "futurePlans": [
+        "Zero-Knowledge Proofs for file verification",
+        "Tokenized Licensing Marketplace",
+        "Posthumous Claim System for heirs",
+        "KYC Integration for Institutions",
+        "Multi-sig Vaults for Research Teams",
+        "AI-assisted IP Summarization"
+      ]
+    },
+    "learnings": [
+      "Successfully implemented a direct integration with Pinata's API to securely upload files and retrieve IPFS hashes within a Next.js environment.",
+      "Developed a smart contract interface (Ethers.js) to handle ERC-20-like 'Crono Tag' ID generation, immutable registration of IPFS hashes, and secure document access control via payable functions.",
+      "Managed complex asynchronous transaction flows for file upload, blockchain registration, and fee-based document access, including network switching (Sepolia) and transaction status updates (toasts)."
+    ],
+    "challenges": [
+      "Handling the entire process of file upload (multi-part form data) and blockchain transaction (wallet confirmation) reliably in a single user flow.",
+      "Implementing a dynamic solution to render various IPFS-hosted file types (PDF, JSON, text, images) within the web application after a successful payment transaction.",
+      "Ensuring robust wallet connection and network detection/switching logic for a smooth user experience across the registration and search pages."
+    ]
+  }
+]

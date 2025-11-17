@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Moon, Sun } from "lucide-react"
+import { Moon, Sun, Menu, X } from 'lucide-react'
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname } from 'next/navigation'
 import { cn } from "@/lib/utils"
 import { useTheme } from "next-themes"
 
@@ -18,6 +18,7 @@ const navItems = [
 export function FloatingTopNav() {
   const [isShaking, setIsShaking] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
@@ -92,78 +93,178 @@ export function FloatingTopNav() {
   if (!mounted) return null
 
   return (
-    <div
-      className={cn(
-        "fixed top-6 left-1/2 transform -translate-x-1/2 w-1/2 z-50 transition-transform duration-200 ease-out",
-        isShaking && "animate-pulse scale-[1.01]",
-      )}
-    >
-      <div className="bg-card backdrop-blur-md border border-border px-6 py-3 shadow-2xl rounded-full">
-        <div className="flex items-center justify-between w-full">
-          {/* Left side */}
-          <div className="flex items-center gap-6">
-            <Link href="/">
-              <div className="relative flex-shrink-0">
-                <svg className="absolute inset-0 w-10 h-10 -rotate-90" viewBox="0 0 40 40">
-                  <circle cx="20" cy="20" r="18" fill="none" stroke="var(--color-muted)" strokeWidth="2" />
-                  <circle
-                    cx="20"
-                    cy="20"
-                    r="19"
-                    fill="none"
-                    stroke="var(--color-primary)"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeDasharray={`${2 * Math.PI * 19}`}
-                    strokeDashoffset={`${2 * Math.PI * 18 * (1 - scrollProgress / 100)}`}
-                    className="transition-all duration-150 ease-out"
-                  />
-                </svg>
-                <div className="w-10 h-10 rounded-full bg-primary overflow-hidden">
-                  <img 
-                    src="/profile.jpg" 
-                    alt="Profile" 
-                    className="w-full h-full object-cover"
-                  />
+    <>
+      {/* DESKTOP VIEW - Keep original design */}
+      <div
+        className={cn(
+          "fixed top-6 left-1/2 transform -translate-x-1/2 w-1/2 z-50 transition-transform duration-200 ease-out hidden md:block",
+          isShaking && "animate-pulse scale-[1.01]",
+        )}
+      >
+        <div className="bg-card backdrop-blur-md border border-border px-6 py-3 shadow-2xl rounded-full">
+          <div className="flex items-center justify-between w-full">
+            {/* Left side */}
+            <div className="flex items-center gap-6">
+              <Link href="/">
+                <div className="relative flex-shrink-0">
+                  <svg className="absolute inset-0 w-10 h-10 -rotate-90" viewBox="0 0 40 40">
+                    <circle cx="20" cy="20" r="18" fill="none" stroke="var(--color-muted)" strokeWidth="2" />
+                    <circle
+                      cx="20"
+                      cy="20"
+                      r="19"
+                      fill="none"
+                      stroke="var(--color-primary)"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeDasharray={`${2 * Math.PI * 19}`}
+                      strokeDashoffset={`${2 * Math.PI * 18 * (1 - scrollProgress / 100)}`}
+                      className="transition-all duration-150 ease-out"
+                    />
+                  </svg>
+                  <div className="w-10 h-10 rounded-full bg-primary overflow-hidden">
+                    <img 
+                      src="/profile.jpg" 
+                      alt="Profile" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
+              </Link>
+
+              <div className="flex items-center gap-1">
+                {navItems.map((item) => (
+                  <Link key={item.href} href={item.href}>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className={cn(
+                        "rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-all",
+                        pathname === item.href && "text-foreground bg-accent"
+                      )}
+                    >
+                      {item.label}
+                    </Button>
+                  </Link>
+                ))}
               </div>
-            </Link>
-
-            <div className="flex items-center gap-1">
-              {navItems.map((item) => (
-                <Link key={item.href} href={item.href}>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className={cn(
-                      "rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-all",
-                      pathname === item.href && "text-foreground bg-accent"
-                    )}
-                  >
-                    {item.label}
-                  </Button>
-                </Link>
-              ))}
             </div>
-          </div>
 
-          {/* Right side - Theme Toggle */}
+            {/* Right side - Theme Toggle */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="rounded-full text-muted-foreground hover:text-foreground hover:bg-accent relative overflow-hidden group"
+              onClick={toggleTheme}
+            >
+              <div className="relative z-10 transition-transform duration-500 group-hover:rotate-12">
+                {theme === 'dark' ? (
+                  <Sun className="w-5 h-5" />
+                ) : (
+                  <Moon className="w-5 h-5" />
+                )}
+              </div>
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* MOBILE VIEW */}
+      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-card backdrop-blur-md border-b border-border px-4 py-3">
+        <div className="flex items-center justify-between w-full">
+          {/* Profile Photo */}
+          <Link href="/">
+            <div className="relative flex-shrink-0">
+              <svg className="absolute inset-0 w-8 h-8 -rotate-90" viewBox="0 0 40 40">
+                <circle cx="20" cy="20" r="18" fill="none" stroke="var(--color-muted)" strokeWidth="2" />
+                <circle
+                  cx="20"
+                  cy="20"
+                  r="19"
+                  fill="none"
+                  stroke="var(--color-primary)"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeDasharray={`${2 * Math.PI * 19}`}
+                  strokeDashoffset={`${2 * Math.PI * 18 * (1 - scrollProgress / 100)}`}
+                  className="transition-all duration-150 ease-out"
+                />
+              </svg>
+              <div className="w-8 h-8 rounded-full bg-primary overflow-hidden">
+                <img 
+                  src="/profile.jpg" 
+                  alt="Profile" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </Link>
+
+          {/* Spacer */}
+          <div className="flex-1" />
+
+          {/* Menu Button */}
           <Button
             variant="ghost"
             size="icon"
-            className="rounded-full text-muted-foreground hover:text-foreground hover:bg-accent relative overflow-hidden group"
-            onClick={toggleTheme}
+            className="rounded-full text-muted-foreground hover:text-foreground hover:bg-accent"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            <div className="relative z-10 transition-transform duration-500 group-hover:rotate-12">
-              {theme === 'dark' ? (
-                <Sun className="w-5 h-5" />
-              ) : (
-                <Moon className="w-5 h-5" />
-              )}
-            </div>
+            {isMobileMenuOpen ? (
+              <X className="w-5 h-5" />
+            ) : (
+              <Menu className="w-5 h-5" />
+            )}
           </Button>
         </div>
       </div>
-    </div>
+
+      {/* MOBILE MENU DROPDOWN */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden fixed top-14 left-0 right-0 z-40 bg-card backdrop-blur-md border-b border-border">
+          <div className="flex flex-col gap-2 p-4">
+            {navItems.map((item) => (
+              <Link key={item.href} href={item.href} onClick={() => setIsMobileMenuOpen(false)}>
+                <Button
+                  variant="ghost"
+                  className={cn(
+                    "w-full justify-start rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-all",
+                    pathname === item.href && "text-foreground bg-accent"
+                  )}
+                >
+                  {item.label}
+                </Button>
+              </Link>
+            ))}
+
+            {/* Divider */}
+            <div className="my-2 h-px bg-border" />
+
+            <Button
+              variant="ghost"
+              className="w-full justify-start rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent"
+              onClick={(e) => {
+                toggleTheme(e)
+                setIsMobileMenuOpen(false)
+              }}
+            >
+              <div className="flex items-center gap-2">
+                {theme === 'dark' ? (
+                  <>
+                    <Sun className="w-5 h-5" />
+                    <span>Light Mode</span>
+                  </>
+                ) : (
+                  <>
+                    <Moon className="w-5 h-5" />
+                    <span>Dark Mode</span>
+                  </>
+                )}
+              </div>
+            </Button>
+          </div>
+        </div>
+      )}
+    </>
   )
 }

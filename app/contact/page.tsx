@@ -29,23 +29,9 @@ const contactMethods = [
   {
     icon: Mail,
     title: "Email",
-    value: "raj@example.com",
+    value: "rajsha8617@gmail.com",
     description: "Best for detailed project discussions",
-    href: "mailto:raj@example.com",
-  },
-  {
-    icon: Phone,
-    title: "Phone",
-    value: "+91 98765 43210",
-    description: "Available Mon-Fri, 9 AM - 6 PM IST",
-    href: "tel:+919876543210",
-  },
-  {
-    icon: MapPin,
-    title: "Location",
-    value: "Mumbai, India",
-    description: "Open to remote and hybrid work",
-    href: "#",
+    href: "mailto:rajsha8617@gmail.com",
   },
 ]
 
@@ -53,22 +39,22 @@ const socialLinks = [
   {
     icon: Github,
     name: "GitHub",
-    username: "@raj-dev",
-    href: "https://github.com/raj-dev",
+    username: "@rajsha10",
+    href: "https://github.com/rajsha10",
     color: "hover:text-gray-400",
   },
   {
     icon: Linkedin,
     name: "LinkedIn",
-    username: "Raj Kumar",
-    href: "https://linkedin.com/in/raj-kumar",
+    username: "Raj Sharma",
+    href: "https://www.linkedin.com/in/raj-sharma-web/",
     color: "hover:text-blue-400",
   },
   {
     icon: Twitter,
     name: "Twitter",
-    username: "@raj_codes",
-    href: "https://twitter.com/raj_codes",
+    username: "@raj_sharma190",
+    href: "https://x.com/raj_sharma190",
     color: "hover:text-blue-400",
   },
 ]

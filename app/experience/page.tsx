@@ -4,13 +4,9 @@ import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import {
-  AnimatedSection,
-} from "@/components/animated-section";
+import { AnimatedSection } from "@/components/animated-section";
 import TechIcon from "@/components/TechIcon";
 import {
-  Briefcase,
-  GraduationCap,
   Award,
   Calendar,
   MapPin,
@@ -20,9 +16,8 @@ import {
   CheckCircle,
   Link as LinkIcon,
 } from "lucide-react";
-import timelineData from "@/data/experience.json"; // Import the JSON data
+import timelineData from "@/data/experience.json";
 
-// Define the type for an experience item based on the JSON structure
 interface ExperienceItem {
   id: number;
   type: "work" | "education";
@@ -37,20 +32,6 @@ interface ExperienceItem {
   location: string;
   workType: "Remote" | "In-Office" | "On-Campus";
 }
-
-// Map icon components
-const iconMap = {
-  work: Briefcase,
-  education: GraduationCap,
-};
-
-// Map colors
-const colorMap = {
-  1: "text-primary",
-  2: "text-blue-500",
-  3: "text-green-500",
-  4: "text-yellow-500",
-};
 
 export default function ExperiencePage() {
   const [visibleItems, setVisibleItems] = useState<number[]>([]);

@@ -2,7 +2,7 @@ import { BackgroundRippleEffect } from "./ui/background-ripple-effect"
 import AnimatedGreetings from "./AnimatedGreetings"
 import { AnimatedSection } from "./animated-section"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react"
+import { Github, Linkedin } from "lucide-react"
 import { FaXTwitter } from "react-icons/fa6";
 import ProfileImage from "./ProfileImage"
 import { LinkPreview } from "./ui/link-preview"
@@ -37,7 +37,7 @@ export default function Hero(){
                                 </div>
                                 
                                 <h1 className="text-xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight tracking-tight">
-                                I'm Raj — A Full Stack web developer.
+                                I`&apos;`m Raj — A Full Stack web developer.
                                 </h1>
                                 <span className="p-0 m-0 italic text-muted-foreground">
                                     Always learning. Always building
@@ -86,7 +86,7 @@ export default function Hero(){
                                         <TbBrandThreejs />
                                         Three.js
                                         </span>
-                                        <span>today's most powerful technologies</span>
+                                        <span>today`&apos;`s most powerful technologies</span>
                                     </div>
                                     </div>
                             </div>

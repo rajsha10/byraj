@@ -14,8 +14,6 @@ import {
   Award,
   Calendar,
   MapPin,
-  Globe,
-  Users,
   Building,
   Laptop,
   BookOpen,
@@ -104,10 +102,8 @@ export default function ExperiencePage() {
                 {/* Timeline Line */}
                 <div className="absolute left-6 top-0 bottom-0 w-px bg-border -translate-x-1/2"></div>
 
-                {(timelineData as ExperienceItem[]).map((item, index) => {
+                {(timelineData as ExperienceItem[]).map((item) => {
                   const isVisible = visibleItems.includes(item.id);
-                  const IconComponent = iconMap[item.type];
-                  const itemColor = colorMap[item.id as keyof typeof colorMap] || "text-primary";
 
                   return (
                     <div
@@ -123,6 +119,7 @@ export default function ExperiencePage() {
                       <Card className="w-full">
                         <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                           <div className="flex items-center gap-4">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                               src={item.logoUrl}
                               alt={`${item.brandName} Logo`}
@@ -191,7 +188,7 @@ export default function ExperiencePage() {
                               What I Learned
                             </h4>
                             <p className="text-muted-foreground italic">
-                              "{item.learnings}"
+                              &quot;{item.learnings}&quot;
                             </p>
                           </div>
 

@@ -13,7 +13,7 @@ export default function About() {
             <span className="absolute top-10 left-20 text-blue-500">&lt;div&gt;</span>
             <span className="absolute bottom-24 right-28 text-green-500">{"{ user.name }"}</span>
             <span className="absolute top-1/2 left-1/4 text-primary">&lt;/section&gt;</span>
-            <span className="absolute bottom-12 left-12 text-purple-400">console.log("Raj")</span>
+            <span className="absolute bottom-12 left-12 text-purple-400">console.log(`&quot;`Raj`&quot;`)</span>
           </div>
           <div className="grid md:grid-cols-2 gap-16 items-center">
             
@@ -35,7 +35,7 @@ export default function About() {
 
               <div className="space-y-6 text-muted-foreground">
                 <p className="text-lg leading-relaxed">
-                  I'm <span className="text-primary font-semibold">Raj Sharma</span>, a{" "}
+                  I`&apos;`m <span className="text-primary font-semibold">Raj Sharma</span>, a{" "}
                   <span className="text-green-600 dark:text-green-400 font-semibold">full-stack developer</span> 
                   and computer science student passionate about building modern, scalable applications.
                 </p>

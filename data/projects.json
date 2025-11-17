@@ -111,8 +111,8 @@
     "status": "Deployed",
     "title": "Crono Tag",
     "shortDescription": "A decentralized intellectual property (IP) timestamping and licensing platform, built for researchers, creators, and innovators to prove ownership and originality using blockchain technology. It provides eternal proof, verifiable, and attributed records.",
-    "thumbnail": "/public/icon.png",
-    "bannerImage": "/public/Digital-Art-3D.gif",
+    "thumbnail": "/projects/croro.png",
+    "bannerImage": "/projects/crono.png",
     "links": {
       "liveDemo": "https://cronotag.vercel.app",
       "github": "https://github.com/rajsha10/cronotag"

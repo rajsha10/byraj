@@ -10,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
 import { toast } from "sonner"
-import { sendContactEmail } from "@/actions";
+import { sendContactEmail } from "@/actions"
 import {
   Send,
   Mail,
@@ -107,7 +107,7 @@ export default function ContactPage() {
       if (result.success) {
         setIsSubmitted(true)
         toast.success("Message sent successfully!")
-        
+
         setTimeout(() => {
           setFormData({
             name: "",
@@ -123,6 +123,7 @@ export default function ContactPage() {
         toast.error(result.error || "Something went wrong. Please try again.")
       }
     } catch (error) {
+      console.error(error)
       toast.error("Failed to send message. Please check your connection.")
     } finally {
       setIsSubmitting(false)
@@ -132,17 +133,16 @@ export default function ContactPage() {
   return (
     // CRITICAL: Ensure NO 'overflow-hidden' or 'overflow-x-hidden' is here
     <div className="min-h-screen bg-background text-foreground w-full px-4 md:w-[90%] lg:w-[85%] mx-auto">
-
       <div className="pt-24 pb-20">
         {/* Hero Section */}
         <section className="py-20 px-6">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl font-heading font-bold">
-                Let's <span className="text-accent">Connect</span>
+                Let&apos;s <span className="text-accent">Connect</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                Ready to bring your ideas to life? I'd love to hear about your project and explore how we can work
+                Ready to bring your ideas to life? I&apos;d love to hear about your project and explore how we can work
                 together.
               </p>
             </div>
@@ -167,7 +167,9 @@ export default function ContactPage() {
                       <MessageSquare className="h-6 w-6 text-accent" />
                       Send Me a Message
                     </CardTitle>
-                    <CardDescription>Fill out the form below and I'll get back to you within 24 hours.</CardDescription>
+                    <CardDescription>
+                      Fill out the form below and I&apos;ll get back to you within 24 hours.
+                    </CardDescription>
                   </CardHeader>
 
                   <CardContent className="px-0 pb-0">
@@ -178,7 +180,7 @@ export default function ContactPage() {
                         </div>
                         <h3 className="text-xl font-heading font-semibold">Message Sent Successfully!</h3>
                         <p className="text-muted-foreground">
-                          Thank you for reaching out. I'll review your message and get back to you soon.
+                          Thank you for reaching out. I&apos;ll review your message and get back to you soon.
                         </p>
                       </div>
                     ) : (
@@ -405,8 +407,8 @@ export default function ContactPage() {
                       <Coffee className="h-8 w-8 text-accent mx-auto" />
                       <div className="text-sm font-medium">Coffee Chat?</div>
                       <div className="text-xs text-muted-foreground leading-relaxed">
-                        I'm always up for a virtual coffee chat to discuss ideas, even if there's no immediate project
-                        in mind!
+                        I&apos;m always up for a virtual coffee chat to discuss ideas, even if there&apos;s no immediate
+                        project in mind!
                       </div>
                     </div>
                   </CardContent>
@@ -427,12 +429,12 @@ export default function ContactPage() {
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="p-6">
                 <CardHeader className="px-0 pt-0">
-                  <CardTitle className="text-lg">What's your typical project timeline?</CardTitle>
+                  <CardTitle className="text-lg">What&apos;s your typical project timeline?</CardTitle>
                 </CardHeader>
                 <CardContent className="px-0 pb-0">
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Project timelines vary based on complexity, but most websites take 2-4 weeks, while web applications
-                    can take 1-3 months. I'll provide a detailed timeline after understanding your requirements.
+                    can take 1-3 months. I&apos;ll provide a detailed timeline after understanding your requirements.
                   </p>
                 </CardContent>
               </Card>
@@ -455,7 +457,7 @@ export default function ContactPage() {
                 </CardHeader>
                 <CardContent className="px-0 pb-0">
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    I specialize in React, Next.js, Node.js, and modern web technologies. I'm also experienced with
+                    I specialize in React, Next.js, Node.js, and modern web technologies. I&apos;m also experienced with
                     databases, cloud platforms, and can adapt to your preferred tech stack.
                   </p>
                 </CardContent>

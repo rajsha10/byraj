@@ -47,7 +47,7 @@ const values = [
   {
     icon: Lightbulb,
     title: "Innovation",
-    description: "Always seeking creative solutions and pushing the boundaries of what's possible.",
+    description: "Always seeking creative solutions and pushing the boundaries of what&apos;s possible.",
   },
   {
     icon: Users,
@@ -66,7 +66,6 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-
       <div className="pt-24 pb-20">
         {/* Hero Section */}
         <section className="py-20 px-6">
@@ -105,7 +104,9 @@ export default function AboutPage() {
                       >
                         <div className="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-accent/30 transition-all duration-500 group-hover:border-accent group-hover:shadow-xl group-hover:shadow-accent/20">
                           <div
-                            className={`w-full h-full bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center transition-all duration-500 ${imageHovered ? "scale-110" : ""}`}
+                            className={`w-full h-full bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center transition-all duration-500 ${
+                              imageHovered ? "scale-110" : ""
+                            }`}
                           >
                             <Code2 className="h-20 w-20 text-accent" />
                           </div>
@@ -116,12 +117,13 @@ export default function AboutPage() {
 
                     <div className="md:col-span-2 space-y-6">
                       <div>
-                        <h2 className="text-2xl font-heading font-bold mb-4">Hello, I'm Raj</h2>
+                        <h2 className="text-2xl font-heading font-bold mb-4">Hello, I&apos;m Raj</h2>
                         <div className="space-y-4 text-muted-foreground leading-relaxed">
                           <p>
-                            I'm a passionate web developer with over 4 years of experience creating digital experiences
-                            that matter. My journey began with a curiosity about how websites work, and it has evolved
-                            into a deep love for crafting beautiful, functional applications that solve real problems.
+                            I&apos;m a passionate web developer with over 4 years of experience creating digital
+                            experiences that matter. My journey began with a curiosity about how websites work, and it
+                            has evolved into a deep love for crafting beautiful, functional applications that solve real
+                            problems.
                           </p>
                           <p>
                             Born and raised in India, I bring a unique perspective to my work, blending traditional
@@ -130,9 +132,9 @@ export default function AboutPage() {
                             intuitive and delightful.
                           </p>
                           <p>
-                            When I'm not coding, you'll find me exploring new coffee brewing techniques, listening to
-                            classical Indian music, or capturing the world through my camera lens. These interests fuel
-                            my creativity and often inspire my approach to problem-solving in development.
+                            When I&apos;m not coding, you&apos;ll find me exploring new coffee brewing techniques,
+                            listening to classical Indian music, or capturing the world through my camera lens. These
+                            interests fuel my creativity and often inspire my approach to problem-solving in development.
                           </p>
                         </div>
                       </div>
@@ -179,7 +181,6 @@ export default function AboutPage() {
                       <Heart className="h-6 w-6 text-accent" />
                       My Values
                     </CardTitle>
-                    <CardDescription>The principles that guide my work and approach to development</CardDescription>
                   </CardHeader>
                   <CardContent className="px-0 pb-0">
                     <div className="grid md:grid-cols-2 gap-6">
@@ -192,7 +193,9 @@ export default function AboutPage() {
                           </div>
                           <div className="space-y-2">
                             <h3 className="font-semibold">{value.title}</h3>
-                            <p className="text-sm text-muted-foreground leading-relaxed">{value.description}</p>
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                              {value.description}
+                            </p>
                           </div>
                         </div>
                       ))}
@@ -256,8 +259,8 @@ export default function AboutPage() {
                       <div className="text-2xl">☕</div>
                       <div className="text-sm font-medium">Fun Fact</div>
                       <div className="text-xs text-muted-foreground leading-relaxed">
-                        I've tried over 100 different coffee varieties from around the world, and I believe the perfect
-                        cup of coffee leads to the perfect code!
+                        I&apos;ve tried over 100 different coffee varieties from around the world, and I believe the
+                        perfect cup of coffee leads to the perfect code!
                       </div>
                     </div>
                   </CardContent>
@@ -278,9 +281,9 @@ export default function AboutPage() {
             </div>
 
             <div className="space-y-4">
-              <h2 className="text-3xl font-heading font-bold">Let's Create Something Amazing</h2>
+              <h2 className="text-3xl font-heading font-bold">Let&apos;s Create Something Amazing</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Ready to bring your ideas to life? I'd love to hear about your project and explore how we can work
+                Ready to bring your ideas to life? I&apos;d love to hear about your project and explore how we can work
                 together.
               </p>
             </div>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Mail, Github, Linkedin, Twitter, MessageCircle, Calendar } from "lucide-react"
+import { ArrowRight, Mail} from "lucide-react"
 import { AnimatedSection } from "@/components/animated-section"
 import Hero from "@/components/Hero"
 import About from "@/components/About"
@@ -71,8 +71,8 @@ export default function HomePage() {
 
             {/* Enhanced description */}
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Let's collaborate and turn your ideas into powerful, scalable web applications. 
-              I'm always excited to work on new projects and solve interesting challenges.
+              Let`&apos;`s collaborate and turn your ideas into powerful, scalable web applications. 
+              I`&apos;`m always excited to work on new projects and solve interesting challenges.
             </p>
 
             {/* CTA buttons using theme colors */}

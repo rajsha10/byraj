@@ -17,7 +17,6 @@ import {
   Clock,
   Rocket,
   Target,
-  FlaskConical,
   GraduationCap,
   Lightbulb,
 } from "lucide-react";

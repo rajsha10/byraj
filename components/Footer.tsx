@@ -40,21 +40,21 @@ export default function Footer() {
           {/* Social Links */}
           <div className="flex gap-4">
             <a
-              href="#"
+              href="https://github.com/rajsha10"
               className="p-2 rounded-lg bg-muted border border-border text-muted-foreground hover:text-foreground hover:border-primary hover:bg-primary/10 transition-all duration-300 hover:scale-110"
               aria-label="GitHub"
             >
               <Github className="h-5 w-5" />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/raj-sharma-web/"
               className="p-2 rounded-lg bg-muted border border-border text-muted-foreground hover:text-foreground hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-300 hover:scale-110"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="#"
+              href="https://x.com/raj_sharma190"
               className="p-2 rounded-lg bg-muted border border-border text-muted-foreground hover:text-foreground hover:border-secondary hover:bg-secondary/10 transition-all duration-300 hover:scale-110"
               aria-label="Twitter/X"
             >

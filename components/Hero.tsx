@@ -13,6 +13,8 @@ import { SiNextdotjs, SiMongodb } from "react-icons/si";
 import { TbBrandThreejs } from "react-icons/tb";
 import { PiReadCvLogoFill } from "react-icons/pi";
 
+import Link from "next/link"
+
 export default function Hero(){
 
     return(
@@ -137,21 +139,25 @@ export default function Hero(){
                                 <Github className="h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
                             </LinkPreview>
                             
-                            <button
-                             className="group relative p-3 rounded-lg bg-card border border-border 
-                                hover:bg-accent hover:border-accent transition-all duration-300 
-                                hover:scale-110 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
-                            >
-                                <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300" />
-                            </button>
-                            
-                            <button
+                            <Link href="https://www.linkedin.com/in/raj-sharma-web/">
+                                <button
                                 className="group relative p-3 rounded-lg bg-card border border-border 
                                 hover:bg-accent hover:border-accent transition-all duration-300 
-                                hover:scale-110 hover:-translate-y-1 hover:shadow-lg"
-                            >
-                                <FaXTwitter className="h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
-                            </button>
+                                hover:scale-110 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+                                >
+                                    <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300" />
+                                </button>
+                            </Link>
+                            
+                            <Link href="https://x.com/raj_sharma190">
+                                <button
+                                    className="group relative p-3 rounded-lg bg-card border border-border 
+                                    hover:bg-accent hover:border-accent transition-all duration-300 
+                                    hover:scale-110 hover:-translate-y-1 hover:shadow-lg"
+                                    >
+                                    <FaXTwitter className="h-5 w-5 text-muted-foreground group-hover:text-foreground transition-colors duration-300" />
+                                </button>
+                            </Link>
                         </div>
                     </AnimatedSection>
                 </div>

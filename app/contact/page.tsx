@@ -18,12 +18,12 @@ import {
   MapPin,
   Github,
   Linkedin,
-  Twitter,
   Clock,
   CheckCircle,
   MessageSquare,
   Coffee,
 } from "lucide-react"
+import { BsTwitterX } from "react-icons/bs";
 
 const contactMethods = [
   {
@@ -51,7 +51,7 @@ const socialLinks = [
     color: "hover:text-blue-400",
   },
   {
-    icon: Twitter,
+    icon: BsTwitterX,
     name: "Twitter",
     username: "@raj_sharma190",
     href: "https://x.com/raj_sharma190",
@@ -117,9 +117,8 @@ export default function ContactPage() {
   }
 
   return (
-    // CRITICAL: Ensure NO 'overflow-hidden' or 'overflow-x-hidden' is here
     <div className="min-h-screen bg-background text-foreground w-full px-4 md:w-[90%] lg:w-[85%] mx-auto">
-      <div className="pt-24 pb-20">
+      <div className="pt-24 pb-8">
         {/* Hero Section */}
         <section className="py-20 px-6">
           <div className="max-w-4xl mx-auto text-center space-y-8">
@@ -133,7 +132,7 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <div className="flex items-center justify-center py-8">
+            <div className="flex items-center justify-center py-2">
               <div className="w-16 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent"></div>
               <div className="mx-4 text-accent/70">✦</div>
               <div className="w-16 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent"></div>

@@ -8,7 +8,7 @@ const XTwitterIcon = () => (
 
 export default function Footer() {
   return (
-    <footer className="relative bg-card border-t border-border py-12 px-6 mx-auto mt-20 overflow-hidden w-full md:w-[90%] lg:w-[60%]">
+    <footer className="relative bg-card border-t border-border py-12 px-6 mx-auto overflow-hidden w-full md:w-[90%] lg:w-[60%]">
       {/* Subtle grid background */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute inset-0" style={{

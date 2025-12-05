@@ -39,7 +39,7 @@ export default function Hero(){
                                 </div>
                                 
                                 <h1 className="text-xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight tracking-tight">
-                                I`&apos;`m Raj — A Full Stack web developer.
+                                I&apos;m Raj — A Full Stack web developer.
                                 </h1>
                                 <span className="p-0 m-0 italic text-muted-foreground">
                                     Always learning. Always building

@@ -1,58 +1,94 @@
 "use client"
 
-import {
-  createContext,
-  useContext,
-  useState,
-  type ReactNode,
-} from "react"
+import React, { createContext, useContext, useState, useEffect, useTransition } from "react"
+import { usePathname, useRouter } from "next/navigation"
+import Link from "next/link"
 
-type Point = { x: number; y: number }
-
-interface TransitionContextValue {
+// --- Context ---
+type TransitionContextType = {
   isTransitioning: boolean
-  transitionOrigin: Point | null
-  startTransition: (origin: Point) => void
-  finishTransition: () => void
+  startTime: number | null
+  startTransition: () => void
+  endTransition: () => void
 }
 
-const TransitionContext = createContext<TransitionContextValue | undefined>(
-  undefined
-)
+const TransitionContext = createContext<TransitionContextType>({
+  isTransitioning: false,
+  startTime: null,
+  startTransition: () => {},
+  endTransition: () => {},
+})
 
-export function TransitionProvider({ children }: { children: ReactNode }) {
+export const useTransitionContext = () => useContext(TransitionContext)
+
+// --- Provider ---
+export function TransitionProvider({ children }: { children: React.ReactNode }) {
   const [isTransitioning, setIsTransitioning] = useState(false)
-  const [transitionOrigin, setTransitionOrigin] = useState<Point | null>(null)
+  const [startTime, setStartTime] = useState<number | null>(null)
+  const pathname = usePathname()
 
-  const startTransition = (origin: Point) => {
-    // Ignore if a transition is already running
-    setTransitionOrigin((prev) => {
-      if (isTransitioning && prev) return prev
-      return origin
-    })
-    if (!isTransitioning) {
-      setIsTransitioning(true)
+  // Reset transition when pathname changes (Navigation Complete)
+  useEffect(() => {
+    if (isTransitioning) {
+      // The PageBlurTransition component handles the visual cleanup
+      // We just ensure state is eventually consistent here if needed
     }
+  }, [pathname])
+
+  const startTransition = () => {
+    setIsTransitioning(true)
+    setStartTime(Date.now())
   }
 
-  const finishTransition = () => {
+  const endTransition = () => {
     setIsTransitioning(false)
-    setTransitionOrigin(null)
+    setStartTime(null)
   }
 
   return (
     <TransitionContext.Provider
-      value={{ isTransitioning, transitionOrigin, startTransition, finishTransition }}
+      value={{
+        isTransitioning,
+        startTime,
+        startTransition,
+        endTransition,
+      }}
     >
       {children}
     </TransitionContext.Provider>
   )
 }
 
-export function useTransition() {
-  const ctx = useContext(TransitionContext)
-  if (!ctx) {
-    throw new Error("useTransition must be used within a TransitionProvider")
+interface TransitionLinkProps extends React.ComponentProps<typeof Link> {
+  href: string
+}
+
+export function TransitionLink({ href, children, onClick, ...props }: TransitionLinkProps) {
+  const router = useRouter()
+  const { startTransition } = useTransitionContext()
+  const pathname = usePathname()
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
+    
+    if (href === pathname) return
+
+    e.preventDefault()
+    
+    startTransition()
+    
+    // 2. Call optional user onClick
+    if (onClick) onClick(e)
+
+    // 3. Push route (React Transition allows generic loading states, but we use our custom overlay)
+    React.startTransition(() => {
+      router.push(href as string)
+    })
   }
-  return ctx
+
+  return (
+    <Link href={href} onClick={handleClick} {...props}>
+      {children}
+    </Link>
+  )
 }

@@ -69,12 +69,12 @@ const AnimatedGreetings = () => {
 
   return (
     <div className="text-lg md:text-2xl text-foreground">
-      <span className="text-primary">
+      <span className="text-red-900 dark:text-cyan-300">
         &lt;h4&gt;&nbsp;
       </span>
       <span className="text-muted-foreground">{nextText}</span>
       <span>{currentText}</span>
-      <span className="text-primary">
+      <span className="text-red-900 dark:text-cyan-300">
         &nbsp;&lt;/h4&gt;
       </span>
     </div>

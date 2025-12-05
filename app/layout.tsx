@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, DM_Sans } from "next/font/google"
 import { FloatingTopNav } from "@/components/floating-nav"
-import { PageTransition } from "@/components/page-transition"
 import { ThemeProvider } from "@/components/theme-provider"
-import "./globals.css";
+import { TransitionProvider } from "@/context/transition-context";
+import { PageBlurTransition } from "@/components/page-blur-transition"
+
+import { SmoothScrollProvider } from "@/components/smooth-scroll-provider";
 import Footer from "@/components/Footer";
+import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -20,7 +23,6 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: "raj-codes",
-  
 };
 
 export default function RootLayout({
@@ -37,11 +39,15 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          <PageTransition>
-            <FloatingTopNav />
-            {children}
-            <Footer />
-          </PageTransition>
+          <SmoothScrollProvider>
+            <TransitionProvider>
+              <PageBlurTransition />
+              
+              <FloatingTopNav />
+              {children}
+              <Footer />
+            </TransitionProvider>
+          </SmoothScrollProvider>
         </ThemeProvider>
       </body>
     </html>

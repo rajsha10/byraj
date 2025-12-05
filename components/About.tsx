@@ -42,9 +42,9 @@ export default function About() {
 
                 <p className="text-base leading-relaxed">
                   Skilled in{" "}
-                  <span className="text-foreground font-medium">Next.js, MERN stack, PHP, MySQL, and RESTful APIs</span>, 
+                  <span className="text-foreground font-medium">Next.js, MERN stack, PHP, MySQL, and RESTful APIs</span>,
                   I also bring experience in{" "}
-                  <span className="text-orange-600 dark:text-orange-400 font-medium">blockchain development, Solidity, and Web3 solutions</span>. 
+                  <span className="text-orange-600 dark:text-primary font-medium">blockchain development, Solidity, and Web3 solutions</span>.
                   I enjoy creating functional, user-friendly products with expertise in{" "}
                   <span className="text-green-600 dark:text-green-400 font-medium">AI tools, cybersecurity, and cloud deployment</span>.
                 </p>
@@ -71,7 +71,7 @@ export default function About() {
                   <div className="text-sm text-muted-foreground">Projects Shipped</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">1+</div>
+                  <div className="text-2xl font-bold text-orange-600 dark:text-primary">1+</div>
                   <div className="text-sm text-muted-foreground">Years</div>
                 </div>
               </div>
